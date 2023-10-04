@@ -17,7 +17,7 @@
         "primeicons": "^6.0.1",
         "primevue": "3.28.0",
         "remixicon": "^3.4.0",
-        "vee-validate": "^4.10.8",
+        "vee-validate": "^4.11.6",
         "vue": "^3.2.41",
         "vue-router": "^4.1.5"
     },
