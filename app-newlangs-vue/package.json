@@ -10,7 +10,7 @@
         "@braid/vue-formulate": "^2.5.3",
         "axios": "^1.4.0",
         "build": "^0.1.4",
-        "chart.js": "3.3.2",
+        "chart.js": "3.9.1",
         "pinia": "^2.1.6",
         "pinia-plugin-persist": "^1.0.0",
         "primeflex": "^3.2.1",
