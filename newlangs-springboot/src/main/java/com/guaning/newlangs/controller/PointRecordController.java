@@ -43,39 +43,6 @@ public class PointRecordController {
 		
 		return pointRecordService.edit(dto);
 	}
-	
-	//购买积分
-	//@PostMapping("/buy")
-	//public SaResult buyPoint(@RequestBody BuyPointDto dto) {
-	//	if (StrUtil.hasBlank(dto.getType(),
-	//			dto.getName(),
-	//			dto.getMoney(),
-	//			dto.getClientip(),
-	//			dto.getDevice())) {
-	//		return SaResult.error("参数错误");
-	//	}
-	//
-	//	return pointRecordService.buyPoint(dto);
-	//}
-	//
-	////异步请求接口
-	//@GetMapping("/notify_url")
-	//public String notify(Map<String, Object> params) {
-	//	return pointRecordService.notify(params);
-	//}
-	
-	//生成积分兑换码
-	@GetMapping("/createCode")
-	public SaResult createPointCode(@RequestParam int point, @RequestParam String apiKey) {
-		if (!apiKey.equals("9cd5f566b9b69245")) {
-			return SaResult.error("校验失败");
-		} else if (point <= 0) {
-			return SaResult.error("参数错误");
-		} else {
-			return pointRecordService.createPointCode(point);
-		}
-	}
-	
 	//兑换积分
 	@GetMapping("/exchangePoint")
 	public SaResult exchangePoint(@RequestParam String pointCode) {
