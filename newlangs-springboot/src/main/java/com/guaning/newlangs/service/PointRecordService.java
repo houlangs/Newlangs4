@@ -17,16 +17,4 @@ public interface PointRecordService extends IService<PointRecord> {
 
 	// Edit Point Record
 	SaResult edit(PointRecord dto);
-
-	// Buy Points
-	void buyPoint(BuyPointDto dto);
-
-	// Asynchronous Notification Interface
-	String notify(HttpServletRequest request);
-
-	// Generate Point Redemption Code
-	SaResult createPointCode(int point);
-
-	// Redeem Points
-	SaResult exchangePoint(String pointCode);
 }
