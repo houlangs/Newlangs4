@@ -18,11 +18,11 @@ const agree = ref(false)
 
 const register = () => {
 	if (password.value !== rePassword.value) {
-		return toast.add({ severity: 'error', summary: 'ERROR', detail: 'Passwords do not match!', life: 3000 })
+		return toast.add({ severity: 'error', summary: 'ERROR', detail: '密码不一致！', life: 3000 })
 	}
 	regDisabled.value = true
 	if (agree.value === false) {
-		return toast.add({ severity: 'error', summary: 'ERROR', detail: 'Please check to agree to Houlang usage policy', life: 3000 })
+		return toast.add({ severity: 'error', summary: 'ERROR', detail: '请勾选表示同意使用政策', life: 3000 })
 	}
 
 	axios.post('/user/register', {
@@ -46,7 +46,7 @@ const register = () => {
 
 const sendCode = () => {
 	if (email.value === '')
-		return toast.add({ severity: 'error', summary: 'ERROR', detail: 'Please enter your email', life: 3000 })
+		return toast.add({ severity: 'error', summary: 'ERROR', detail: '请填写邮箱', life: 3000 })
 	disabled.value = true
 	axios.get('/user/email_code', {
 		params: {
@@ -67,7 +67,6 @@ const sendCode = () => {
 		})
 }
 </script>
-
 <style>
 .logo {
 	width: 270px;
@@ -84,42 +83,41 @@ const sendCode = () => {
 				style="border-radius: 56px; padding: 0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%)">
 				<div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius: 53px">
 					<div class="text-center mb-5">
-						<div class="text-900 text-3xl font-medium mb-3">Welcome to Houlang</div>
-						<span class="text-600 font-medium">Register your account</span>
+						<div class="text-900 text-3xl font-medium mb-3">欢迎来到厚浪</div>
+						<span class="text-600 font-medium">注册您的账号</span>
 					</div>
 
 					<div>
-						<label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
-						<InputText id="email1" type="text" placeholder="Your email address" class="w-full md:w-30rem mb-5"
+						<label for="email1" class="block text-900 text-xl font-medium mb-2">邮箱</label>
+						<InputText id="email1" type="text" placeholder="您的邮件地址" class="w-full md:w-30rem mb-5"
 							style="padding: 1rem" v-model="email" />
 
-						<label for="password1" class="block text-900 font-medium text-xl mb-2">Password</label>
-						<Password id="password1" v-model="password" placeholder="Your password" :toggleMask="true"
+						<label for="password1" class="block text-900 font-medium text-xl mb-2">密码</label>
+						<Password id="password1" v-model="password" placeholder="您的密码" :toggleMask="true"
 							class="w-full mb-3" inputClass="w-full" inputStyle="padding:1rem"></Password>
 
-						<label for="rePassword" class="block text-900 font-medium text-xl mb-2">Repeat Password</label>
-						<Password id="rePassword" v-model="rePassword" placeholder="Repeat password" :toggleMask="true"
+						<label for="rePassword" class="block text-900 font-medium text-xl mb-2">重复密码</label>
+						<Password id="rePassword" v-model="rePassword" placeholder="重复密码" :toggleMask="true"
 							class="w-full mb-3" inputClass="w-full" inputStyle="padding:1rem"></Password>
 
-						<label for="email1" class="block text-900 text-xl font-medium mb-2">Verification Code</label>
-						<InputText id="email1" type="text" placeholder="Email verification code"
-							class="w-full md:w-30rem mb-5" style="padding: 1rem" v-model="code" />
+						<label for="email1" class="block text-900 text-xl font-medium mb-2">验证码</label>
+						<InputText id="email1" type="text" placeholder="邮件验证码" class="w-full md:w-30rem mb-5"
+							style="padding: 1rem" v-model="code" />
 
 						<div class="flex align-items-center justify-content-between mb-5 gap-5">
 							<router-link to="/auth/login" class="font-medium no-underline ml-2 text-right cursor-pointer"
-								style="color: var(--primary-color)">Already have an account? Go to login</router-link>
+								style="color: var(--primary-color)">已有账号？去登录</router-link>
 							<div>
 								<Checkbox v-model="agree" :binary="true" />
 								<label class="ml-2">
 									<a href="https://forum.houlangs.com/d/2-hou-lang-zheng-ce-lie-biao" target="_blank"
-										class="font-medium no-underline ml-2 text-right cursor-pointer">Agree to all Houlang
-										usage policies</a>
+										class="font-medium no-underline ml-2 text-right cursor-pointer">同意全部使用政策</a>
 								</label>
 							</div>
 						</div>
-						<Button text label="Get Verification Code" class="w-full p-3 text-xl mb-2" @click="sendCode"
+						<Button text label="获取验证码" class="w-full p-3 text-xl mb-2" @click="sendCode"
 							:disabled="disabled"></Button>
-						<Button label="Register" class="w-full p-3 text-xl" @click="register"></Button>
+						<Button label="注册" class="w-full p-3 text-xl" @click="register"></Button>
 					</div>
 				</div>
 			</div>

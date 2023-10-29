@@ -53,28 +53,28 @@ const login = () => {
                 style="border-radius: 56px; padding: 0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%)">
                 <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius: 53px">
                     <div class="text-center mb-5">
-                        <div class="text-900 text-3xl font-medium mb-3">Welcome to Houlang</div>
-                        <span class="text-600 font-medium">Log in to your account</span>
+                        <div class="text-900 text-3xl font-medium mb-3">欢迎使用厚浪</div>
+                        <span class="text-600 font-medium">登录您的账号</span>
                     </div>
 
                     <div>
-                        <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
-                        <InputText id="email1" type="text" placeholder="Your email address" class="w-full md:w-30rem mb-5"
+                        <label for="email1" class="block text-900 text-xl font-medium mb-2">邮箱</label>
+                        <InputText id="email1" type="text" placeholder="您的邮件地址" class="w-full md:w-30rem mb-5"
                             style="padding: 1rem" v-model="email" />
 
-                        <label for="password" class="block text-900 font-medium text-xl mb-2">Password</label>
-                        <Password id="password" v-model="password" placeholder="Your password" :toggleMask="true"
-                            class="w-full mb-3" inputClass="w-full" inputStyle="padding:1rem" :feedback="false"></Password>
+                        <label for="password" class="block text-900 font-medium text-xl mb-2">密码</label>
+                        <Password id="password" v-model="password" placeholder="您的密码" :toggleMask="true" class="w-full mb-3"
+                            inputClass="w-full" inputStyle="padding:1rem" :feedback="false"></Password>
 
                         <div class="flex align-items-center justify-content-between mb-5 gap-5">
                             <div class="flex align-items-center">
                                 <Checkbox v-model="checked" id="rememberme" binary class="mr-2"></Checkbox>
-                                <label for="rememberme">Remember me</label>
+                                <label for="rememberme">记住登录</label>
                             </div>
                             <router-link to="/auth/register" class="font-medium no-underline ml-2 text-right cursor-pointer"
-                                style="color: var(--primary-color)">Don't have an account? Register here</router-link>
+                                style="color: var(--primary-color)">没有账号？去注册</router-link>
                         </div>
-                        <Button label="Log in" class="w-full p-3 text-xl" @click="login" :disabled="disabled"></Button>
+                        <Button label="登录" class="w-full p-3 text-xl" @click="login" :disabled="disabled"></Button>
                     </div>
                 </div>
             </div>

@@ -306,20 +306,6 @@ const computedDomain = () => {
 </script>
 
 <template>
-	<div class="card">
-		<h3>⚠️解析须知</h3>
-		<p>禁止搭建如发卡、易支付、商店等任何涉及支付的盈利性网站
-			<br>
-			禁止搭建如博彩、色情、赌博、诈骗等违法违规网站
-			<br>
-			使用备案域名请务必在网站底部悬挂备案号
-			<br>
-			禁止使用域名进行任何违法行为
-			<br>
-			违者删除解析、封禁账号，不予解封
-		</p>
-		<h4>请完成认证后再解析<a href="/#/user_info">点此认证</a></h4>
-	</div>
 	<div>
 		<div class="card">
 			<Toolbar class="mb-4">

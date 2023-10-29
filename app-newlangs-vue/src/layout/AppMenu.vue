@@ -6,72 +6,55 @@ const auth = localStorage.getItem('auth')
 
 const userModel = ref([
     {
-        label: 'Overview',
+        label: '总览',
         items: [
-            { label: 'Home', icon: 'pi pi-fw pi-home', to: '/' },
+            { label: '首页', icon: 'pi pi-fw pi-home', to: '/' },
         ]
     },
     {
-        label: 'Domain Services',
+        label: '域名服务',
         items: [
-            { label: 'Domain Resolution', icon: 'pi pi-fw pi-at', to: '/domain_record' },
-            { label: 'Expense Records', icon: 'ri-coins-line', to: '/point_record' },
-            { label: 'Get Resolution Quota', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
+            { label: '解析域名', icon: 'pi pi-fw pi-at', to: '/domain_record' },
+            { label: '消费记录', icon: 'ri-coins-line', to: '/point_record' },
+            { label: '获取解析额度', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
         ]
     },
     {
-        label: 'Cloud Services',
+        label: '其它',
         items: [
-            { label: 'CDN', icon: 'pi pi-fw pi-cloud-upload', to: '/cdn' },
-            { label: 'Cloud Servers', icon: 'pi pi-fw pi-globe', to: '/service' },
-            { label: 'Virtual Hosting', icon: 'pi pi-fw pi-database', to: '/rvh' }
-        ]
-    },
-    {
-        label: 'Other',
-        items: [
-            { label: 'Violation Scan', icon: 'pi pi-fw pi-search', to: '/scan' },
-            { label: 'Feedback', icon: 'pi pi-fw pi-question-circle', to: '/feedback' },
-            { label: 'Blue Charity', icon: 'pi pi-fw pi-thumbs-up', to: '/philanthropy' }
+            { label: '违规扫描', icon: 'pi pi-fw pi-search', to: '/scan' },
+            { label: '问题反馈', icon: 'pi pi-fw pi-question-circle', to: '/feedback' }
         ]
     }
 ])
 
 const adminModel = ref([
     {
-        label: 'Overview',
-        items: [{ label: 'Home', icon: 'pi pi-fw pi-home', to: '/' }]
+        label: '总览',
+        items: [{ label: '首页', icon: 'pi pi-fw pi-home', to: '/' }]
     },
     {
-        label: 'User Management',
+        label: '用户管理',
         items: [
-            { label: 'User Groups', icon: 'pi pi-fw pi-sitemap', to: '/user_role' },
-            { label: 'User List', icon: 'pi pi-fw pi-users', to: '/user_list' },
+            { label: '用户组', icon: 'pi pi-fw pi-sitemap', to: '/user_role' },
+            { label: '用户列表', icon: 'pi pi-fw pi-users', to: '/user_list' },
         ]
     },
     {
-        label: 'Domain Services',
+        label: '域名服务',
         items: [
-            { label: 'Domain List', icon: 'pi pi-fw pi-globe', to: '/domain_list' },
-            { label: 'Domain Resolution', icon: 'pi pi-fw pi-at', to: '/domain_record' },
-            { label: 'Expense Records', icon: 'ri-coins-line', to: '/point_record' },
-            { label: 'Get Resolution Quota', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
+            { label: '域名列表', icon: 'pi pi-fw pi-globe', to: '/domain_list' },
+            { label: '解析域名', icon: 'pi pi-fw pi-at', to: '/domain_record' },
+            { label: '消费记录', icon: 'ri-coins-line', to: '/point_record' },
+            { label: '获取解析额度', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
         ]
     },
     {
-        label: 'Cloud Services',
+        label: '设置',
         items: [
-            { label: 'CDN', icon: 'pi pi-fw pi-cloud-upload', to: '/cdn' },
-            { label: 'Cloud Servers', icon: 'pi pi-fw pi-globe', to: '/service' },
-            { label: 'Virtual Hosting', icon: 'pi pi-fw pi-database', to: '/rvh' }
-        ]
-    },
-    {
-        label: 'Settings',
-        items: [
-            { label: 'General Configuration', icon: 'pi pi-fw pi-cog', to: '/common_config' },
-            { label: 'DNS Configuration', icon: 'pi pi-fw pi-wrench', to: '/dns_config' },
-            { label: 'Violation Detection', icon: 'pi pi-fw pi-search', to: '/scan' }
+            { label: '通用配置', icon: 'pi pi-fw pi-cog', to: '/common_config' },
+            { label: 'DNS配置', icon: 'pi pi-fw pi-wrench', to: '/dns_config' },
+            { label: '违规检测', icon: 'pi pi-fw pi-search', to: '/scan' }
         ]
     }
 ])

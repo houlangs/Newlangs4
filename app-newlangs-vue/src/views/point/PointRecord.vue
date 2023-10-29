@@ -15,18 +15,18 @@ onMounted(() => {
     getList()
 })
 
-// Get point records list
+//获取积分记录列表
 const getList = () => {
-    axios.get('/point_record/list', {
+	axios.get('/point_record/list', {
         params: {
             page: 1,
             pageSize: 10
         }
     }).then(function(response) {
-        pointRecords.value = response.data.data.records
+		pointRecords.value = response.data.data.records
         console.log(response.data)
     }).catch(function(error) {
-        toast.add({severity: 'error', summary: 'ERROR', detail: error, life: 3000})
+		toast.add({severity: 'error', summary: 'ERROR', detail: error, life: 3000})
         console.log(error)
     })
 }
@@ -36,33 +36,33 @@ const getList = () => {
     <div class="card">
         <Toolbar class="mb-4">
             <template #start>
-                <h4 class="m-0">Point Records</h4>
+                <h4 class="m-0">解析记录</h4>
             </template>
         </Toolbar>
 
         <DataTable showGridlines :value="pointRecords" v-model:selection="selectedUsers" dataKey="id" columnResizeMode="fit"
             :paginator="true" :rows="10" :filters="filters"
             paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" :rowsPerPageOptions="[5,10,25]"
-            currentPageReportTemplate="Page {first} of {last}, Total {totalRecords} records">
+            currentPageReportTemplate="第 {first} 页，本页 {last} 条记录，共 {totalRecords} 条记录">
             <template #header>
                 <div class="flex flex-wrap gap-2 align-items-center justify-content-between">
-                    <span class="p-input-icon-left">
+					<span class="p-input-icon-left">
                         <i class="pi pi-search" />
-                        <InputText v-model="filters['global'].value" placeholder="Search" />
+                        <InputText v-model="filters['global'].value" placeholder="搜索" />
                     </span>
-                </div>
+				</div>
             </template>
 
-            <Column field="userId" header="User ID"></Column>
-            <Column field="action" header="Action" style="min-width: 5rem">
+            <Column field="userId" header="用户ID"></Column>
+            <Column field="action" header="操作" style="min-width: 5rem">
                 <template #body="slotProps">
-                    <Tag :severity="slotProps.data.action === 'Increase' ? 'success' : (slotProps.data.action === 'Consume' ? '' : 'danger')" :value="slotProps.data.action" />
-                </template>
+		            <Tag :severity="slotProps.data.action === '增加' ? 'success' : (slotProps.data.action === '消费' ? '' : 'danger')" :value="slotProps.data.action" />
+	            </template>
             </Column>
-            <Column field="balance" header="Balance" style="min-width: 4rem"></Column>
-            <Column field="rest" header="Remaining Quota" style="min-width: 8rem"></Column>
-            <Column field="remark" header="Remark" style="min-width: 8rem"></Column>
-            <Column field="createdTime" header="Creation Time" style="min-width:12rem"></Column>
+            <Column field="balance" header="额度" style="min-width: 4rem"></Column>
+            <Column field="rest" header="剩余解析额度" style="min-width: 8rem"></Column>
+            <Column field="remark" header="备注" style="min-width: 8rem"></Column>
+            <Column field="createdTime" header="创建时间" style="min-width:12rem"></Column>
         </DataTable>
     </div>
 </template>

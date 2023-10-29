@@ -1,7 +1,9 @@
 <template>
 	<div class="layout-footer footer">
-		<div>由 <a href="https://forum.houlangs.com/d/14-newlangs-ming-xie-ming-dan" target="_blank">厚浪开发团队</a> 开发</div>
-    <div>Newlangs 4 - 开源</div>
+		Newlangs 4.4.0
+		<div>由<a href="https://forum.houlangs.com/d/14-newlangs-ming-xie-ming-dan" target="_blank">厚浪开发团队</a>开发 基于<a
+				href="https://www.rainyun.com/?ref=ins/" target="_blank">雨云</a></div>
+
 	</div>
 </template>
 

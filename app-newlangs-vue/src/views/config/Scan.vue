@@ -12,10 +12,10 @@ const startScan = () => {
 	axios.get('/config/scan', { timeout: 100 })
 		.then(function (response) {
 			if (response.data.code === 200)
-				toast.add({ severity: 'success', summary: 'Operation Successful', detail: response.data.msg, life: 3000 })
+				toast.add({ severity: 'success', summary: '操作成功', detail: response.data.msg, life: 3000 })
 			else {
 				console.log(response.data)
-				toast.add({ severity: 'error', summary: 'Operation Failed', detail: response.data.msg, life: 3000 })
+				toast.add({ severity: 'error', summary: '操作失败', detail: response.data.msg, life: 3000 })
 			}
 			isScan.value = false
 		}).catch(function (error) {
@@ -27,16 +27,14 @@ const startScan = () => {
 <template>
 	<Toast />
 	<div class="card p-fluid">
-		<h3>🤔 What is Violation Scan?</h3>
-		<p>To ensure the long-term availability of domains, we regularly scan all domains. If violations are detected, the
-			domains will be deleted.</p>
+		<h3>🤔 什么是违规扫描？</h3>
+		<p>为了保证域名长期可用，我们定期扫描所有域名，如果发现违规情况，将会删除域名。</p>
 		<br>
-		<h3>😤 Why Was My Domain Deleted?</h3>
-		<p>Domains that are inaccessible or in violation of our policies will be deleted. If your domain is used for a
-			Minecraft server, please add a note during DNS configuration.</p>
+		<h3>😤 为何我的域名被删除？</h3>
+		<p>无法访问或违规的域名将被删除。如果您的域名用于Minecraft服务器，请在解析时添加备注。</p>
 	</div>
 	<div class="card p-fluid">
-		<Button label="Start Scan" class="mr-2 mb-2 gradient" :disabled="isScan" @click="startScan"></Button>
+		<Button label="开始扫描" class="mr-2 mb-2 gradient" :disabled="isScan" @click="startScan"></Button>
 	</div>
 	<div class="card flex justify-content-center" v-if="isScan">
 		<ProgressSpinner />

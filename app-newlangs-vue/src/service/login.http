@@ -1,0 +1,9 @@
+# @no-cookie-jar
+POST http://localhost:8080/user/login
+Content-Type: application/json
+
+{
+    "email": "123456@qq.com",
+    "password": "123456",
+    "rememberMe": true
+}

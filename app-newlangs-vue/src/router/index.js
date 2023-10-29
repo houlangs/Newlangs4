@@ -65,31 +65,6 @@ const router = createRouter({
                     component: () => import('@/views/user/UserInfo.vue'),
                 },
                 {
-                    path: '/cdn',
-                    name: 'CDN',
-                    component: () => import('@/views/domain/CDN.vue'),
-                },
-                {
-                    path: '/service',
-                    name: 'service',
-                    component: () => import('@/views/domain/service.vue'),
-                },
-                {
-                    path: '/rvh',
-                    name: 'rvh',
-                    component: () => import('@/views/domain/rvh.vue'),
-                },
-                {
-                    path: '/donate',
-                    name: 'donate',
-                    component: () => import('@/views/config/donate.vue'),
-                },
-                // {
-                //     path: '/buy_point',
-                //     name: 'BuyPoint',
-                //     component: () => import('@/views/point/BuyPoint.vue'),
-                // },
-                {
                     path: '/exchange_point',
                     name: 'ExchangePoint',
                     component: () => import('@/views/point/ExchangePoint.vue'),
@@ -98,12 +73,7 @@ const router = createRouter({
                     path: '/feedback',
                     name: 'feedback',
                     component: () => import('@/views/config/feedback.vue'),
-                },
-                {
-                    path: '/philanthropy',
-                    name: 'philanthropy',
-                    component: () => import('@/views/config/lantai.vue'),
-                },
+                }
             ]
         },
         {
