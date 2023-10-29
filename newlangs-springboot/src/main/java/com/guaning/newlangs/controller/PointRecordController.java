@@ -43,13 +43,4 @@ public class PointRecordController {
 		
 		return pointRecordService.edit(dto);
 	}
-	//兑换积分
-	@GetMapping("/exchangePoint")
-	public SaResult exchangePoint(@RequestParam String pointCode) {
-		if (pointCode == null) {
-			return SaResult.error("兑换码错误");
-		} else {
-			return pointRecordService.exchangePoint(pointCode);
-		}
-	}
 }
