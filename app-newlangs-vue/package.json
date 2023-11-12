@@ -8,7 +8,7 @@
     },
     "dependencies": {
         "@braid/vue-formulate": "^2.5.3",
-        "axios": "^1.4.0",
+        "axios": "^1.6.0",
         "build": "^0.1.4",
         "chart.js": "3.3.2",
         "pinia": "^2.1.6",
