@@ -9,12 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 public interface PointRecordService extends IService<PointRecord> {
-	// List of Point Records
+	//积分记录列表
 	SaResult list(int page, int pageSize);
-
-	// Add Point Record
+	
+	//添加积分记录
 	SaResult add(PointRecord dto);
-
-	// Edit Point Record
+	
+	//修改积分
 	SaResult edit(PointRecord dto);
+	
+	//生成积分兑换码
+	SaResult createPointCode(int point);
+	
+	//兑换积分
+	SaResult exchangePoint(String pointCode);
 }

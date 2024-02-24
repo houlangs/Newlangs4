@@ -43,12 +43,12 @@ const exchangePoint = () => {
 	<div>
 		<div class="card">
 			<div class="flex align-items-center justify-content-between mb-4">
-				<h4>🤔 如何获取兑换码/解析额度？</h4>
+				<h4>🤔 如何获取兑换码/积分？</h4>
 			</div>
 			<p>
-				🌟 加入 Q 群<br><br>
-				🥳 宣传本站：在视频平台发布宣传视频，在群内@管理员即可领取额度！<br><br>
-				📢 注意：从雨云兑换的兑换码，有效期为 5 分钟，请及时使用哦！
+				🌦️ 前往雨云兑换：进入 <a href="https://www.rainyun.com/ins_?s=app-langs-score" target="_blank">雨云</a> 注册账号 -> 积分中心 -> 积分商城 免费兑换！<br><br>
+				📢 注意：从雨云兑换的兑换码，有效期为 5 分钟，请及时使用哦！<br><br>
+				🌟 加入Q群：<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=2vThTeSkd03bFCVs9VzM5kfVKedfxTzv&authKey=oPyHIZDxhtYKegn317FSdKLWIBLVdrMkMkO7U3oJJY3fE%2BxcW9RBiIcjfEj%2BTaUn&noverify=0&group_code=605943548" target="_blank">605943548</a>，Q群管家会告诉你兑换码！
 			</p>
 		</div>
 	</div>

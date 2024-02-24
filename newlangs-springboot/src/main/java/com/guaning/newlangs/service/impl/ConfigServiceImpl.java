@@ -4,11 +4,13 @@ import cn.dev33.satoken.util.SaResult;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.guaning.newlangs.apis.CloudFlareAPI;
 import com.guaning.newlangs.dto.DomainRecordCommonDto;
 import com.guaning.newlangs.entity.Config;
+import com.guaning.newlangs.entity.Domain;
 import com.guaning.newlangs.entity.DomainRecord;
 import com.guaning.newlangs.mapper.ConfigMapper;
 import com.guaning.newlangs.service.ConfigService;
@@ -59,9 +61,9 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
 		return SaResult.ok("扫描完毕！扫出违规域名" + num + "个.");
 	}
 
-	@Scheduled(cron = "0 0 1,6,12,18 * * ?")
+	@Scheduled(cron = "0 0/30 * * * ?")
 	@Override
-	public int startScan() throws IOException {
+	public int startScan() {
 		// 获取扫描配置
 		List<Config> configList = list();
 		List<String> keyWords = new ArrayList<>();
@@ -74,18 +76,15 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
 		// 所有需要扫描的域名列表
 		DomainRecordCommonDto dto = new DomainRecordCommonDto();
 		List<String> urlList = new ArrayList<>();
-		JSONArray prefixJSON = JSON.parseObject(JSON.toJSONString(domainRecordService.list(1, 5000).getData()))
-				.getJSONArray("records");
-		JSONArray domainJSON = JSON.parseObject(JSON.toJSONString(domainService.list(1, 5000).getData()))
-				.getJSONArray("records");
-		for (Object prefixObj : prefixJSON) {
-			for (Object domainObj : domainJSON) {
-				JSONObject domainJSONObj = JSON.parseObject(JSON.toJSONString(domainObj));
-				JSONObject prefixJSONObj = JSON.parseObject(JSON.toJSONString(prefixObj));
-				if (prefixJSONObj.getLongValue("did") == domainJSONObj.getLongValue("id")) {
-					urlList.add("http://" + prefixJSONObj.getString("prefix") + "." + domainJSONObj.getString("name"));
-					dto.setDomainId(domainJSONObj.getString("domainId"));
-					dto.setRecordId(prefixJSONObj.getString("recordId"));
+		
+		List<DomainRecord> recordList = domainRecordService.list(new QueryWrapper<DomainRecord>().lambda().orderByDesc(DomainRecord::getCreatedTime));
+		List<Domain> domainList = domainService.list();
+		for (DomainRecord prefix : recordList) {
+			for (Domain domain : domainList) {
+				if (prefix.getDid().equals(domain.getId())) {
+					urlList.add("http://" + prefix.getPrefix() + "." + domain.getName());
+					dto.setDomainId(domain.getDomainId());
+					dto.setRecordId(prefix.getRecordId());
 				}
 			}
 		}

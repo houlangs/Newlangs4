@@ -16,82 +16,81 @@ import org.springframework.stereotype.Service;
 @Service
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
 	private final UserService userService;
-
-	@Autowired
+	
 	public RoleServiceImpl(UserService userService) {
 		this.userService = userService;
 	}
-
-	// Add Role
+	
+	//添加角色
 	@Override
 	public SaResult add(Role role) {
-		// Check if the role name already exists
+		//查询是否存在
 		Role nameOne = getOne(Wrappers.<Role>lambdaQuery().eq(Role::getRoleName, role.getRoleName()));
 		if (nameOne != null) {
-			return SaResult.error("Role name already exists");
+			return SaResult.error("角色名称已存在");
 		}
 		role.setRoleName(role.getRoleName());
-
+		
 		save(role);
-
-		return SaResult.ok("Added successfully");
+		
+		return SaResult.ok("添加成功");
 	}
-
-	// Edit Role
+	
+	//编辑角色
 	@Override
 	public SaResult edit(Role role) {
 		Role one = getById(role);
 		if (one == null) {
-			return SaResult.error("Role does not exist");
+			return SaResult.error("角色不存在");
 		}
-
+		
 		updateById(role);
-
-		return SaResult.ok("Edited successfully");
+		
+		return SaResult.ok("编辑成功");
 	}
-
-	// Get Role List
+	
+	//获取角色列表
 	@Override
 	public SaResult list(int page, int pageSize) {
-		// Create a pagination builder
-		Page<Role> rolePage = new Page<>(page, pageSize);
-
-		// Sort by creation time
-		page(rolePage, Wrappers.<Role>lambdaQuery().orderByAsc(Role::getId));
-
-		return SaResult.data(rolePage);
+		//构造分页构造器
+		Page<Role> rolepage = new Page<>(page, pageSize);
+		
+		//按创建时间排序
+		page(rolepage, Wrappers.<Role>lambdaQuery().orderByAsc(Role::getId));
+		
+		return SaResult.data(rolepage);
 	}
-
-	// Delete Role
+	
+	//删除角色
 	@Override
 	public SaResult delete(DeleteRoleDto dto) {
 		Integer id = dto.getId();
 		Integer newRoleId = dto.getNewRoleId();
-		// Check if the role exists
+		//查询
 		Role role = getById(id);
 		if (role == null) {
-			return SaResult.error("Data does not exist");
+			return SaResult.error("数据不存在");
 		}
-
+		
 		long count = userService.count(Wrappers.<User>lambdaQuery().eq(User::getRoleId, id));
 		if (count == 0 || newRoleId == null) {
-			// Delete directly
+			//直接删除
 			removeById(id);
 		} else {
-			// First update the user's new role ID
+			//先更新用户新角色ID
 			userService.update(Wrappers.<User>lambdaUpdate().eq(User::getRoleId, id).set(User::getRoleId, newRoleId));
-			// Then delete the role
+			//后删除角色
 			removeById(id);
 		}
-
-		return SaResult.ok("Deleted successfully");
+		
+		return SaResult.ok("删除成功");
 	}
-
-	// Get the Number of Users Belonging to a Role
+	
+	//获取属于某角色用户数量
 	@Override
 	public SaResult getCount(Integer id) {
 		long count = userService.count(Wrappers.<User>lambdaQuery().eq(User::getRoleId, id));
-
+		
 		return SaResult.data(count);
 	}
 }

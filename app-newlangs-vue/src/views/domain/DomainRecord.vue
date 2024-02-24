@@ -306,6 +306,17 @@ const computedDomain = () => {
 </script>
 
 <template>
+	<div class="card">
+		<h3>⚠️解析须知</h3>
+		<p>请勿搭建如发卡、易支付、商店等任何涉及支付的盈利性网站
+			<br>
+			禁止搭建违法违规网站
+			<br>
+			使用备案域名请务必在网站底部悬挂备案号
+			<br>
+			遵守<a href="https://forum.houlangs.com/d/2-hou-lang-zheng-ce-lie-biao" target="_blank">厚浪相关政策</a>
+		</p>
+	</div>
 	<div>
 		<div class="card">
 			<Toolbar class="mb-4">

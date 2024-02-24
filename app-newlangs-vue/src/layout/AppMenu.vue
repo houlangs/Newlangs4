@@ -15,15 +15,22 @@ const userModel = ref([
         label: '域名服务',
         items: [
             { label: '解析域名', icon: 'pi pi-fw pi-at', to: '/domain_record' },
-            { label: '消费记录', icon: 'ri-coins-line', to: '/point_record' },
-            { label: '获取解析额度', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
+            { label: '积分记录', icon: 'ri-coins-line', to: '/point_record' },
+            { label: '获取积分', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
+        ]
+    },
+    {
+        label: '云服务',
+        items: [
+            { label: '不限速云盘', icon: 'pi pi-fw pi-send', to: '/pan' },
+            { label: '云服务器', icon: 'pi pi-fw pi-globe', to: '/service' },
         ]
     },
     {
         label: '其它',
         items: [
-            { label: '违规扫描', icon: 'pi pi-fw pi-search', to: '/scan' },
-            { label: '问题反馈', icon: 'pi pi-fw pi-question-circle', to: '/feedback' }
+            //{ label: '违规扫描', icon: 'pi pi-fw pi-search', to: '/scan' },
+            { label: '问题反馈', icon: 'pi pi-fw pi-question-circle', to: '/feedback' },
         ]
     }
 ])
@@ -45,12 +52,12 @@ const adminModel = ref([
         items: [
             { label: '域名列表', icon: 'pi pi-fw pi-globe', to: '/domain_list' },
             { label: '解析域名', icon: 'pi pi-fw pi-at', to: '/domain_record' },
-            { label: '消费记录', icon: 'ri-coins-line', to: '/point_record' },
-            { label: '获取解析额度', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
+            { label: '积分记录', icon: 'ri-coins-line', to: '/point_record' },
+            { label: '获取积分', icon: 'pi pi-fw pi-gift', to: '/exchange_point' }
         ]
     },
     {
-        label: '设置',
+        label: '管理员',
         items: [
             { label: '通用配置', icon: 'pi pi-fw pi-cog', to: '/common_config' },
             { label: 'DNS配置', icon: 'pi pi-fw pi-wrench', to: '/dns_config' },

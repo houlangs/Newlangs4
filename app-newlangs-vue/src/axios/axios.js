@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const axiosIns = axios.create({
-baseURL: '后端接口地址',
-	timeout: 20000
+baseURL: '你的API地址',
+	timeout: 2000
 })
 
 // 添加请求拦截器

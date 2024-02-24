@@ -59,7 +59,7 @@ const login = () => {
 
                     <div>
                         <label for="email1" class="block text-900 text-xl font-medium mb-2">邮箱</label>
-                        <InputText id="email1" type="text" placeholder="您的邮件地址" class="w-full md:w-30rem mb-5"
+                        <InputText id="email1" type="text" placeholder="您的注册邮箱" class="w-full md:w-30rem mb-5"
                             style="padding: 1rem" v-model="email" />
 
                         <label for="password" class="block text-900 font-medium text-xl mb-2">密码</label>
@@ -72,7 +72,7 @@ const login = () => {
                                 <label for="rememberme">记住登录</label>
                             </div>
                             <router-link to="/auth/register" class="font-medium no-underline ml-2 text-right cursor-pointer"
-                                style="color: var(--primary-color)">没有账号？去注册</router-link>
+                                style="color: var(--primary-color)">新用户？去注册</router-link>
                         </div>
                         <Button label="登录" class="w-full p-3 text-xl" @click="login" :disabled="disabled"></Button>
                     </div>

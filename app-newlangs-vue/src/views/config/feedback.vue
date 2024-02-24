@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="iframe-container">
-            <iframe ref="myIframe" src="https://langsteam.feishu.cn/share/base/form/shrcnfx5BilO3R6mLpnxRUf01ig" width="100%" frameborder="0"></iframe>
+            <iframe ref="myIframe" src="https://langsteam.feishu.cn/share/base/form/shrcnfx5BilO3R6mLpnxRUf01ig?prefill_%E6%82%A8%E4%BD%BF%E7%94%A8%E7%9A%84%E6%9C%8D%E5%8A%A1=%E5%8E%9A%E6%B5%AA%E5%9F%9F%E5%90%8D" width="100%" frameborder="0"></iframe>
         </div>
     </div>
 </template>

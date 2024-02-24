@@ -59,10 +59,10 @@ const getList = () => {
 		            <Tag :severity="slotProps.data.action === '增加' ? 'success' : (slotProps.data.action === '消费' ? '' : 'danger')" :value="slotProps.data.action" />
 	            </template>
             </Column>
-            <Column field="balance" header="额度" style="min-width: 4rem"></Column>
-            <Column field="rest" header="剩余解析额度" style="min-width: 8rem"></Column>
+            <Column field="balance" header="积分" style="min-width: 4rem"></Column>
+            <Column field="rest" header="剩余积分" style="min-width: 8rem"></Column>
             <Column field="remark" header="备注" style="min-width: 8rem"></Column>
-            <Column field="createdTime" header="创建时间" style="min-width:12rem"></Column>
+            <Column field="createdTime" header="变更时间" style="min-width:12rem"></Column>
         </DataTable>
     </div>
 </template>

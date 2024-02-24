@@ -11,42 +11,42 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 public interface UserService extends IService<User> {
-    // Email Verification Code
-    SaResult emailCode(String email);
-
-    // Phone Verification Code
-    SaResult phoneCode(String phone);
-
-    // Verify Phone Verification Code
-    SaResult checkPhone(String phone, String code);
-
-    // Real Name Authentication
-    SaResult certification(String name, String IdNumber) throws IOException;
-
-    // User Registration
-    SaResult register(RegisterDto dto);
-
-    // User Login
-    SaResult login(LoginDto dto, HttpServletRequest request);
-
-    // Get User Information
-    SaResult getOne();
-
-    // Update User Information
-    SaResult update(UserUpdateDto dto);
-
-    // Lock Account
-    SaResult lock(Long id);
-
-    // Delete Account
-    SaResult delete(Long id);
-
-    // User List
-    SaResult list(int page, int pageSize);
-
-    // Logout
-    SaResult logout();
-
-    // User Sign-In
-    SaResult signIn();
+	//邮箱验证码
+	SaResult emailCode(String email);
+	
+	//手机验证码
+	SaResult phoneCode(String phone);
+	
+	//校验手机验证码
+	SaResult checkPhone(String phone, String code);
+	
+	//实名认证
+	SaResult certification(String name, String IdNumber) throws IOException;
+	
+	//用户注册
+	SaResult register(RegisterDto dto);
+	
+	//用户登录
+	SaResult login(LoginDto dto, HttpServletRequest request);
+	
+	//获取用户信息
+	SaResult getOne();
+	
+	//更新用户信息
+	SaResult update(UserUpdateDto dto);
+	
+	//封禁账号
+	SaResult lock(Long id);
+	
+	//删除账号
+	SaResult delete(Long id);
+	
+	//用户列表
+	SaResult list(int page, int pageSize);
+	
+	//退出登录
+	SaResult logout();
+	
+	//用户签到
+	SaResult signIn();
 }

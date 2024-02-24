@@ -10,6 +10,12 @@ public class GenSerial {
 private static final String Base32Alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
     
     /**
+     * 生成新的序列号    <br>
+     * <p>生成规则：45位的数 （二进制）<br>
+     *          标识位  + 数据位 + 校验位 <br>
+     * 然后将55位的数映射到用 ABCDEFGHJKLMNPQRSTUVWXYZ23456789 表示的序列号，要映射到32个字符中就是每5位代表一个字符(2^5=32)，
+     * 所有生成的序列号是 45/5=9位。
+     *  
      * @param codeLen    code长度
      * @param flag    标识
      * @param flagBitLen 标识长度
@@ -24,12 +30,12 @@ private static final String Base32Alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
         int dataBitLen = totalBitLen - checkBitLen - flagBitLen;
         long randData = (long)(1 + (1L<<dataBitLen - 1) * random.nextDouble());
         if(flagBitLen > 0){
-            flag = flag & ((1<<flagBitLen) - 1);
-            ret += (long)flag << (totalBitLen - flagBitLen);
+            flag = flag & ((1<<flagBitLen) - 1);                    //防止越位，若16位标识则是 0xffff
+            ret += (long)flag << (totalBitLen - flagBitLen);        //高位标志位
         }
         
-        ret += randData << checkBitLen;
-        long checkNum = (ret >> checkBitLen) % checkModData;
+        ret += randData << checkBitLen;                         // 中位数据位
+        long checkNum = (ret >> checkBitLen) % checkModData;    //低位校验位
         ret += checkNum; // 1 - 7位 校验位
         return convertToBase32SerialCode(ret, codeLen);
     }
@@ -100,6 +106,8 @@ private static final String Base32Alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
     
  
     /**
+     * 将随机数转换成BASE32编码 序列码
+     * 
      * @return
      */
     private static String convertToBase32SerialCode(long longRandValue, int codeLen) {
