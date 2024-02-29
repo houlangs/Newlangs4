@@ -123,7 +123,7 @@
         <dependency>
             <groupId>com.alipay.sdk</groupId>
             <artifactId>alipay-sdk-java</artifactId>
-            <version>4.38.72.ALL</version>
+            <version>4.38.221.ALL</version>
         </dependency>
     </dependencies>
 
