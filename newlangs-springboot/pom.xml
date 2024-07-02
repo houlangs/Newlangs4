@@ -99,7 +99,7 @@
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot-starter</artifactId>
-            <version>1.35.0.RC</version>
+            <version>1.37.0</version>
         </dependency>
         <!--阿里云短信服务-->
         <!--https://next.api.aliyun.com/api-tools/sdk/Dysmsapi?spm=a2c4g.215759.0.0.794b28075QOcNN&version=2017-05-25&language=java-tea&tab=primer-doc-->
