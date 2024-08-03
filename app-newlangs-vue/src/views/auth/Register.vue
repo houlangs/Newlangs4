@@ -82,16 +82,16 @@ const sendCode = () => {
 			<div
 				style="border-radius: 56px; padding: 0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%)">
 				<div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius: 53px">
-					<!--
+					
 					<div class="text-center mb-5">
 						<div class="text-900 text-3xl font-medium mb-3">欢迎来到厚浪</div>
 						<span class="text-600 font-medium">注册您的账号</span>
 					</div>
--->
+
 					<div> 
 						<center>
-						<h2>新用户注册已暂停<br><a href="https://langs.ink/post/01.html">查看详情</a></h2></center>
-						<!--
+						<!--<h2>新用户注册已暂停<br><a href="https://langs.ink/post/01.html">查看详情</a></h2></center>-->
+					
 						<label for="email1" class="block text-900 text-xl font-medium mb-2">邮箱</label>
 						<InputText id="email1" type="text" placeholder="您的邮件地址" class="w-full md:w-30rem mb-5"
 							style="padding: 1rem" v-model="email" />
@@ -107,11 +107,11 @@ const sendCode = () => {
 						<label for="email1" class="block text-900 text-xl font-medium mb-2">验证码</label>
 						<InputText id="email1" type="text" placeholder="邮件验证码" class="w-full md:w-30rem mb-5"
 							style="padding: 1rem" v-model="code" />
--->
+
 						<div class="flex align-items-center justify-content-between mb-5 gap-5">
 							<router-link to="/auth/login" class="font-medium no-underline ml-2 text-right cursor-pointer"
 								style="color: var(--primary-color)">已有账号？去登录</router-link>
-								<!--
+								
 							<div>
 								<Checkbox v-model="agree" :binary="true" />
 								<label class="ml-2">
@@ -119,13 +119,13 @@ const sendCode = () => {
 										class="font-medium no-underline ml-2 text-right cursor-pointer">同意厚浪全部使用政策</a>
 								</label>
 							</div>
-							-->
+							
 						</div>
-						<!--
+						
 						<Button text label="获取验证码" class="w-full p-3 text-xl mb-2" @click="sendCode"
 							:disabled="disabled"></Button>
 						<Button label="注册" class="w-full p-3 text-xl" @click="register"></Button>
-						-->
+						
 					</div>
 				</div>
 			</div>
