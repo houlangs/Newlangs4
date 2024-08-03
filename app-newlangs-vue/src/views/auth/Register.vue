@@ -89,8 +89,8 @@ const sendCode = () => {
 					</div>
 
 					<div> 
-						<center>
-						<!--<h2>新用户注册已暂停<br><a href="https://langs.ink/post/01.html">查看详情</a></h2></center>-->
+						<!--<center>
+						<h2>新用户注册已暂停<br><a href="https://langs.ink/post/01.html">查看详情</a></h2></center>-->
 					
 						<label for="email1" class="block text-900 text-xl font-medium mb-2">邮箱</label>
 						<InputText id="email1" type="text" placeholder="您的邮件地址" class="w-full md:w-30rem mb-5"
