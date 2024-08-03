@@ -183,7 +183,7 @@ const confirmUpdate = () => {
             <label for="from" class="col-12 mb-2 md:col-2 md:mb-0">发件地址</label>
             <div class="col-12 md:col-10">
                 <InputText id="from" type="text"  v-model.trim="fromIn" />
-	            <small>必须正确，否则发送失败</small>
+	            <small>填写你的邮箱！！！，必须正确，否则发送失败</small>
             </div>
         </div>
 		<div class="field grid">
