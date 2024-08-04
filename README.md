@@ -11,6 +11,6 @@
 - **立场正确性**：厚浪开发组全体成员坚定不移坚持党的领导，听党话、跟党走。将个人利益让位于国家利益，将青春年华奉献于社会主义建设。我们坚决维护党对一切事业的绝对领导！
 
 ## 安装指导
-- 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://langsteam.feishu.cn/docx/HS8rdVV7roIDWjxJ660cv8j3ntd?from=from_copylink)。
+- 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://hlyun.org/article/houlangs/hl4-install)。
 - 后端自动构建：[sunwuyuan/newLangs](https://github.com/SunWuyuan/newLangs)。
 - 视频教程：[Bilibili](https://www.bilibili.com/video/BV15e41197WL/)。
