@@ -1,10 +1,14 @@
-name: Java CI with Maven
+name: Java Build CI
 
 on:
   push:
     branches: [ "main" ]
+    paths: 
+      - 'hl4-backend/**'
   pull_request:
     branches: [ "main" ]
+    paths: 
+      - 'hl4-backend/**'
   workflow_dispatch:
 
 jobs:
