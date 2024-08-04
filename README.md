@@ -1,4 +1,6 @@
 # HLYUN4系统
+[![Backend Build CI](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml/badge.svg?branch=main)](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml)
+
 厚浪云4是由厚浪开发组自主研发的新一代二级域名分发系统。
 
 ## 我们的优势
