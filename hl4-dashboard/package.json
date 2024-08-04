@@ -1,6 +1,6 @@
 {
     "name": "Newlangs4",
-    "version": "4.5.5",
+    "version": "4.6.0",
     "scripts": {
         "dev": "vite",
         "build": "vite build",

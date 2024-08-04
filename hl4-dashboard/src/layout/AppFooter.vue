@@ -1,7 +1,7 @@
 <template>
 	<div class="layout-footer footer">
-		厚浪 4.5.5
-		<div>由<a href="https://langs.ink/team.html" target="_blank">厚浪开发组</a>开发 基于<a
+		厚浪 4.6.0
+		<div>由<a href="https://langs.ink/article/houlangs/team.html" target="_blank">厚浪开发组</a>开发 基于<a
 				href="https://www.rainyun.com/ins_?s=app-langs-buttom" target="_blank">雨云</a>
 		</div>
 	</div>

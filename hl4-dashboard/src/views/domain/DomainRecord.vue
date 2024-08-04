@@ -314,7 +314,7 @@ const computedDomain = () => {
 			<br>
 			使用备案域名请务必在网站底部悬挂备案号
 			<br>
-			遵守<a href="https://forum.houlangs.com/d/2-hou-lang-zheng-ce-lie-biao" target="_blank">厚浪相关政策</a>
+			遵守<a href="政策链接" target="_blank">相关政策</a>
 		</p>
 	</div>
 	<div>

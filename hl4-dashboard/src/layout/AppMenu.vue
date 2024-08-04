@@ -20,17 +20,9 @@ const userModel = ref([
         ]
     },
     {
-        label: '云服务',
-        items: [
-            { label: '不限速云盘', icon: 'pi pi-fw pi-send', to: '/pan' },
-            { label: '云服务器', icon: 'pi pi-fw pi-globe', to: '/service' },
-        ]
-    },
-    {
         label: '其它',
         items: [
-            //{ label: '违规扫描', icon: 'pi pi-fw pi-search', to: '/scan' },
-            { label: '问题反馈', icon: 'pi pi-fw pi-question-circle', to: '/feedback' },
+            { label: '违规扫描', icon: 'pi pi-fw pi-search', to: '/scan' },
         ]
     }
 ])
