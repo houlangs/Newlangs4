@@ -20,16 +20,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: cd
-      run: cd ./hl4-backend
     - name: Build with Maven
-      run: mvn clean package -Dmaven.test.skip=true
+      run: cd ./hl4-backend && mvn clean package -Dmaven.test.skip=true
     - name: cp file
-      run: cp application.yml target/application.yml
+      run: cd ./hl4-backend && cp application.yml target/application.yml
     - name: Upload JAR file
       uses: actions/upload-artifact@v2
       with:
           name: newLangs4Backend
           path: |
-            target/application.yml
-            target/*.jar
+            ./hl4-backend/target/application.yml
+            ./hl4-backend/target/*.jar
