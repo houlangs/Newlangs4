@@ -1,7 +1,6 @@
 <template>
   <div class="box">
-    <div>Developed by <a href="https://forum.houlangs.com/d/14-newlangs-ming-xie-ming-dan" target="_blank">Houlangs Development Team</a></div>
-    <div>Newlangs 4 - Open Source</div>
+    <div>由<a href="https://langs.ink/article/houlangs/team.html" target="_blank">厚浪开发组</a>开发</div>
   </div>
 </template>
 

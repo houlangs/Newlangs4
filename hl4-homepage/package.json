@@ -1,6 +1,6 @@
 {
-  "name": "houlang",
-  "version": "4.0.0",
+  "name": "newlangs",
+  "version": "4.6.0",
   "private": true,
   "scripts": {
     "dev": "vite",
