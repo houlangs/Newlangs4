@@ -29,5 +29,5 @@ jobs:
       with:
           name: newLangs4Backend
           path: |
-            ./hl4-backend/target/application.yml
+            ./hl4-backend/src/main/resources/application.yml
             ./hl4-backend/target/*.jar
