@@ -10,8 +10,8 @@
     </parent>
     <groupId>com.guaning</groupId>
     <artifactId>newlangs-springboot</artifactId>
-    <version>4.0</version>
-    <name>newlangs</name>
+    <version>4.6.0</version>
+    <name>HLYUN</name>
     <description>newlangs</description>
     <properties>
         <java.version>17</java.version>
@@ -95,7 +95,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.76</version>
         </dependency>
-        <!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot-starter</artifactId>
