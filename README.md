@@ -1,14 +1,16 @@
-# Newlangs4
+# HLYUN4系统
+厚浪云4是由厚浪开发组自主开发的新一代二级域名分发系统。
 
-## 新功能
+## 我们的优势
+- **开源性**：厚浪云4是开源的，相较于其它二级域名系统，我们不仅先进、开放，诚意满满。代码完全开发，基于MIT协议！
+- **性能**：厚浪云4前后端分离，访问速度even faster.
+- **安全性**：厚浪云4不基于PHP，而是基于Node.js和Java SpringBoot开发，更加安全。
+- **易用性**：厚浪云4拥有只需简单配置即可使用，开发组为您编写了详细的文档，让您轻松上手。
+- **先进性**：厚浪云4系统接入了实名认证接口也短信验证码接口。能有效避免滥用并在用户违规时能够及时追责。
+- **经过实践检验**：伟大领袖毛主席曾说过：实践是检验真理的唯一标准。厚浪云4系统在厚浪云官网生产环境运行，稳定性得到进一步验证。
+- **立场正确性**：厚浪开发组全体成员坚定不移坚持党的领导，听党话、跟党走。将个人利益让位于国家利益，将青春年华奉献于社会主义建设。我们坚决维护党对一切事业的绝对领导！
 
-- 全新界面：基于 VUE 框架，前后端分离、低耦合度
-- 支持 API：NewLangs 有一套独立的 API 系统，您可以通过调用 API 使用或搭建分站
-- 支持 TXT 解析：您可以通过 TXT 解析来验证您的域名所有权
-- 支持手机验证码注册
-- 支持kldns拥有的全部功能
-
-## 安装
-- NewLangs是一个全新的二级域名程序，允许用户快速创建自己的子域，并使用[cloudflare](https://cloudflare.com)作为代理来保护他们的网站。如果您想设置自己的NewLangs程序，请参阅[安装文档](https://langsteam.feishu.cn/docx/HS8rdVV7roIDWjxJ660cv8j3ntd?from=from_copylink)。
-- 后端自动构建：[sunwuyuan/newLangs](https://github.com/SunWuyuan/newLangs)
-- 视频教程：[Bilibili](https://www.bilibili.com/video/BV15e41197WL/)
+## 安装指导
+- 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://langsteam.feishu.cn/docx/HS8rdVV7roIDWjxJ660cv8j3ntd?from=from_copylink)。
+- 后端自动构建：[sunwuyuan/newLangs](https://github.com/SunWuyuan/newLangs)。
+- 视频教程：[Bilibili](https://www.bilibili.com/video/BV15e41197WL/)。
