@@ -27,7 +27,7 @@ jobs:
         settings-path: ${{ github.workspace }}/hl4-backend # location for the settings.xml file
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: cd ./hl4-backend && mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/hl4-backend/settings.xml
