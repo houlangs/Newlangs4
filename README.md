@@ -25,3 +25,6 @@
 - 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://hlyun.org/article/houlangs/hl4-install)。
 - 后端自动构建：[sunwuyuan/newLangs](https://github.com/SunWuyuan/newLangs)。
 - 视频教程：[Bilibili](https://www.bilibili.com/video/BV15e41197WL/)。
+
+## 感谢赞助
+### [雨云](https://www.rainyun.ink) 提供高速稳定的云服务器
