@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.guaning.newlangs.dto.BuyPointDto;
 import com.guaning.newlangs.entity.PointRecord;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 public interface PointRecordService extends IService<PointRecord> {

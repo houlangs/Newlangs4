@@ -4,7 +4,7 @@ import cn.dev33.satoken.util.SaResult;
 import cn.hutool.core.util.StrUtil;
 import com.guaning.newlangs.entity.DomainConfig;
 import com.guaning.newlangs.service.DomainConfigService;
-import com.sun.istack.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

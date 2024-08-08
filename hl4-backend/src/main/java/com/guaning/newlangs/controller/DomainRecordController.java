@@ -6,7 +6,7 @@ import com.guaning.newlangs.dto.DomainRecordCommonDto;
 import com.guaning.newlangs.entity.Config;
 import com.guaning.newlangs.service.ConfigService;
 import com.guaning.newlangs.service.DomainRecordService;
-import com.sun.istack.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

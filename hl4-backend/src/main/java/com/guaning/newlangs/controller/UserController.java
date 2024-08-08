@@ -10,11 +10,11 @@ import com.guaning.newlangs.dto.LoginDto;
 import com.guaning.newlangs.dto.RegisterDto;
 import com.guaning.newlangs.dto.UserUpdateDto;
 import com.guaning.newlangs.service.UserService;
-import com.sun.istack.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @RestController

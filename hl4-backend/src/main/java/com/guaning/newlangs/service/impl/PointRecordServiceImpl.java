@@ -2,7 +2,6 @@ package com.guaning.newlangs.service.impl;
 
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
-import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -15,15 +14,14 @@ import com.guaning.newlangs.service.PointRecordService;
 import com.guaning.newlangs.service.UserService;
 import com.guaning.newlangs.util.GenSerial;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -32,7 +30,7 @@ public class PointRecordServiceImpl extends ServiceImpl<PointRecordMapper, Point
 	final ConfigurableListableBeanFactory beanFactory;
 	private final UserService userService;
 	
-	@Resource
+	@Autowired
 	private RedisTemplate<String, Integer> redisTemplate;
 	
 	public PointRecordServiceImpl(ConfigurableListableBeanFactory beanFactory, UserService userService) {

@@ -1,7 +1,5 @@
 package com.guaning.newlangs.util;
 
-import cn.dev33.satoken.util.SaResult;
-
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
