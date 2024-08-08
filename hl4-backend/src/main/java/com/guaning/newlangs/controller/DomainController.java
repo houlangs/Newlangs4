@@ -5,7 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import com.guaning.newlangs.entity.Domain;
 import com.guaning.newlangs.service.DomainConfigService;
 import com.guaning.newlangs.service.DomainService;
-import com.sun.istack.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

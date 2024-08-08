@@ -7,7 +7,7 @@ import com.guaning.newlangs.dto.RegisterDto;
 import com.guaning.newlangs.dto.UserUpdateDto;
 import com.guaning.newlangs.entity.User;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 public interface UserService extends IService<User> {

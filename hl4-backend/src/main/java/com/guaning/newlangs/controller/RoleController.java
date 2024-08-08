@@ -5,7 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import com.guaning.newlangs.dto.DeleteRoleDto;
 import com.guaning.newlangs.entity.Role;
 import com.guaning.newlangs.service.RoleService;
-import com.sun.istack.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
