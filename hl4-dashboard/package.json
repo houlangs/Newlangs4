@@ -1,0 +1,31 @@
+{
+    "name": "Newlangs4",
+    "version": "4.6.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@braid/vue-formulate": "^2.5.3",
+        "axios": "^1.6.4",
+        "build": "^0.1.4",
+        "chart.js": "3.3.2",
+        "pinia": "^2.1.6",
+        "pinia-plugin-persist": "^1.0.0",
+        "primeflex": "^3.2.1",
+        "primeicons": "^6.0.1",
+        "primevue": "3.28.0",
+        "remixicon": "^3.4.0",
+        "vee-validate": "^4.10.8",
+        "vue": "^3.2.41",
+        "vue-router": "^4.1.5"
+    },
+    "devDependencies": {
+        "@rushstack/eslint-patch": "^1.1.4",
+        "@vitejs/plugin-vue": "^4.1.0",
+        "purgecss": "^5.0.0",
+        "sass": "^1.55.0",
+        "vite": "^4.4.7"
+    }
+}
