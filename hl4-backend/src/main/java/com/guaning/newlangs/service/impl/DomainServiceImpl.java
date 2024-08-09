@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+@Lazy
 @Service
 public class DomainServiceImpl extends ServiceImpl<DomainMapper, Domain> implements DomainService {
 
