@@ -13,6 +13,7 @@ import com.guaning.newlangs.dto.DomainRecordCommonDto;
 import com.guaning.newlangs.entity.*;
 import com.guaning.newlangs.mapper.DomainRecordMapper;
 import com.guaning.newlangs.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,19 +22,21 @@ import java.util.Objects;
 
 @Service
 public class DomainRecordServiceImpl extends ServiceImpl<DomainRecordMapper, DomainRecord> implements DomainRecordService {
-	private final CloudFlareAPI cf;
-	private final DomainService domainService;
-	private final DomainConfigService domainConfigService;
-	private final UserService userService;
-	private final PointRecordService pointRecordService;
-	
-	public DomainRecordServiceImpl(CloudFlareAPI cf, DomainService domainService, DomainConfigService domainConfigService, UserService userService, PointRecordService pointRecordService) {
-		this.cf = cf;
-		this.domainService = domainService;
-		this.domainConfigService = domainConfigService;
-		this.userService = userService;
-		this.pointRecordService = pointRecordService;
-	}
+
+	@Autowired
+	private CloudFlareAPI cf;
+
+	@Autowired
+	private DomainService domainService;
+
+	@Autowired
+	private DomainConfigService domainConfigService;
+
+	@Autowired
+	private UserService userService;
+
+	@Autowired
+	private PointRecordService pointRecordService;
 	
 	//添加域名记录
 	@Override

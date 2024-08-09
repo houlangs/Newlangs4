@@ -14,11 +14,9 @@ import java.util.List;
 
 @Component
 public class StpInterfaceImpl implements StpInterface {
-	private final UserService userService;
-	
-	public StpInterfaceImpl(UserService userService) {
-		this.userService = userService;
-	}
+
+	@Autowired
+	private UserService userService;
 	
 	@Override
 	public List<String> getPermissionList(Object loginId, String s) {

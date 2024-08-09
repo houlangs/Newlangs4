@@ -22,6 +22,7 @@ import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.*;
@@ -30,18 +31,18 @@ import java.util.regex.Pattern;
 
 @Service
 public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> implements ConfigService {
-	private final CloudFlareAPI cf;
-	private final DomainService domainService;
-	private final DomainRecordService domainRecordService;
 
-	public ConfigServiceImpl(CloudFlareAPI cf, DomainService domainService, DomainRecordService domainRecordService) {
-		this.cf = cf;
-		this.domainService = domainService;
-		this.domainRecordService = domainRecordService;
+	@Autowired
+	private CloudFlareAPI cf;
 
-	}
+	@Autowired
+	private DomainService domainService;
+
+	@Autowired
+	private DomainRecordService domainRecordService;
 
 	// 更新配置
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public SaResult update(Collection<Config> entityList) {
 		updateBatchById(entityList);

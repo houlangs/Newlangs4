@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/role")
 public class RoleController {
-	private RoleService roleService;
-	
+
 	@Autowired
-	public void setRoleService(RoleService roleService) {
-		this.roleService = roleService;
-	}
+	private RoleService roleService;
 	
 	//新增角色
 	@PostMapping("/add")

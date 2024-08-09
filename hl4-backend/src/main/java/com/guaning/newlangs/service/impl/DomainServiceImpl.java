@@ -26,20 +26,15 @@ import java.util.Map;
 
 @Service
 public class DomainServiceImpl extends ServiceImpl<DomainMapper, Domain> implements DomainService {
-	private final CloudFlareAPI cf;
-	private final DomainConfigService domainConfigService;
-	
-	public DomainServiceImpl(CloudFlareAPI cf, DomainConfigService domainConfigService) {
-		this.cf = cf;
-		this.domainConfigService = domainConfigService;
-	}
-	
-	private DomainRecordService domainRecordService;
-	
+
 	@Autowired
-	public void setDomainRecordService(DomainRecordService domainRecordService) {
-		this.domainRecordService = domainRecordService;
-	}
+	private CloudFlareAPI cf;
+
+	@Autowired
+	private DomainConfigService domainConfigService;
+
+	@Autowired
+	private DomainRecordService domainRecordService;
 	
 	//获取域名信息
 	@Override

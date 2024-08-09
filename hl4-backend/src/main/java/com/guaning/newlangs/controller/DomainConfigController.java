@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/domain_config")
 public class DomainConfigController {
-	private DomainConfigService domainConfigService;
-	
+
 	@Autowired
-	public void setDomainConfigService(DomainConfigService domainConfigService) {
-		this.domainConfigService = domainConfigService;
-	}
+	private DomainConfigService domainConfigService;
 	
 	//添加DNS平台配置
 	@PostMapping("/add")

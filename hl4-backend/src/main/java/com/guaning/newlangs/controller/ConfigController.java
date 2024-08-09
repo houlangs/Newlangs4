@@ -15,12 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/config")
 public class ConfigController {
-	private ConfigService configService;
-	
+
 	@Autowired
-	public void setConfigService(ConfigService configService) {
-		this.configService = configService;
-	}
+	private ConfigService configService;
 	
 	//更新配置
 	@PutMapping("/update")

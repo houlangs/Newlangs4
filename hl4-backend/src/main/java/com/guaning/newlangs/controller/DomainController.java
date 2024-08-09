@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/domain")
 public class DomainController {
-	private DomainService domainService;
-	
+
 	@Autowired
-	public void setDomainService(DomainService domainService) {
-		this.domainService = domainService;
-	}
+	private DomainService domainService;
 	
 	//获取域名信息
 	@GetMapping("/detail/{id}")

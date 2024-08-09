@@ -7,6 +7,7 @@ import com.guaning.newlangs.entity.Config;
 import com.guaning.newlangs.service.ConfigService;
 import com.guaning.newlangs.service.DomainRecordService;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -16,13 +17,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/domain_record")
 public class DomainRecordController {
-	private final DomainRecordService domainRecordService;
-	private final ConfigService configService;
-	
-	public DomainRecordController(DomainRecordService domainRecordService, ConfigService configService) {
-		this.domainRecordService = domainRecordService;
-		this.configService = configService;
-	}
+
+	@Autowired
+	private DomainRecordService domainRecordService;
+
+	@Autowired
+	private ConfigService configService;
 	
 	//添加域名记录
 	@PostMapping("/add")
