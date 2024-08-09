@@ -48,6 +48,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.NewlangsApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -216,6 +217,7 @@
       <workItem from="1697250507679" duration="632000" />
       <workItem from="1697334642599" duration="906000" />
       <workItem from="1723105352071" duration="1216000" />
+      <workItem from="1723177938749" duration="210000" />
     </task>
     <servers />
   </component>
