@@ -15,11 +15,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
-	private final UserService userService;
-	
-	public RoleServiceImpl(UserService userService) {
-		this.userService = userService;
-	}
+
+	@Autowired
+	private UserService userService;
 	
 	//添加角色
 	@Override

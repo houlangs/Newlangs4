@@ -30,6 +30,7 @@ import com.guaning.newlangs.service.DomainRecordService;
 import com.guaning.newlangs.service.PointRecordService;
 import com.guaning.newlangs.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -44,25 +45,18 @@ import java.util.concurrent.TimeUnit;
 @Service
 @Slf4j
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
-	final ConfigurableListableBeanFactory beanFactory;
+
+	@Autowired
+	private RedisTemplate<String, String> redisTemplate;
 	
-	private final RedisTemplate<String, String> redisTemplate;
-	public UserServiceImpl(ConfigurableListableBeanFactory beanFactory, RedisTemplate<String, String> redisTemplate) {
-		this.beanFactory = beanFactory;
-		this.redisTemplate = redisTemplate;
-	}
-	
-	public ConfigService getConfigService() {
-		return beanFactory.getBean(ConfigService.class);
-	}
-	
-	public DomainRecordService getDomainRecordService() {
-		return beanFactory.getBean(DomainRecordService.class);
-	}
-	
-	public PointRecordService getPointRecordService() {
-		return beanFactory.getBean(PointRecordService.class);
-	}
+	@Autowired
+	private ConfigService configService;
+
+	@Autowired
+	private DomainRecordService domainRecordService;
+
+	@Autowired
+	private PointRecordService pointRecordService;
 	
 	private String generateSixDigitCode() {
         // 生成一个随机的 6 位数字验证码
@@ -75,15 +69,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 	@Override
 	public SaResult emailCode(String email) {
 		// 读取信息
-		String host = getConfigService().getById("mail_host").getV();
-		Integer port = Integer.valueOf(getConfigService().getById("mail_port").getV());
-		String from = getConfigService().getById("mail_from").getV();
-		String user = getConfigService().getById("mail_user").getV();
-		String pass = getConfigService().getById("mail_pass").getV();
-		boolean sslEnable = Boolean.parseBoolean(getConfigService().getById("mail_sslEnable").getV());
-		boolean starttlsEnable = Boolean.parseBoolean(getConfigService().getById("mail_starttlsEnable").getV());
-		long timeout = Long.parseLong(getConfigService().getById("mail_timeout").getV());
-		long connectionTimeout = Long.parseLong(getConfigService().getById("mail_connectionTimeout").getV());
+		String host = configService.getById("mail_host").getV();
+		Integer port = Integer.valueOf(configService.getById("mail_port").getV());
+		String from = configService.getById("mail_from").getV();
+		String user = configService.getById("mail_user").getV();
+		String pass = configService.getById("mail_pass").getV();
+		boolean sslEnable = Boolean.parseBoolean(configService.getById("mail_sslEnable").getV());
+		boolean starttlsEnable = Boolean.parseBoolean(configService.getById("mail_starttlsEnable").getV());
+		long timeout = Long.parseLong(configService.getById("mail_timeout").getV());
+		long connectionTimeout = Long.parseLong(configService.getById("mail_connectionTimeout").getV());
 
 		// 配置信息
 		MailAccount account = new MailAccount();
@@ -276,7 +270,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 		int defaultPoint = 0;
 		// 获取扫描配置
-		List<Config> configList = getConfigService().list();
+		List<Config> configList = configService.list();
 		for (Config con : configList) {
 			if (con.getK().equals("default_point")) {
 				defaultPoint = Integer.parseInt(con.getV());
@@ -456,15 +450,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 			// 发送邮件通知
 			// 读取信息
-			String host = getConfigService().getById("mail_host").getV();
-			Integer port = Integer.valueOf(getConfigService().getById("mail_port").getV());
-			String from = getConfigService().getById("mail_from").getV();
-			String userAccount = getConfigService().getById("mail_user").getV();
-			String pass = getConfigService().getById("mail_pass").getV();
-			boolean sslEnable = Boolean.parseBoolean(getConfigService().getById("mail_sslEnable").getV());
-			boolean starttlsEnable = Boolean.parseBoolean(getConfigService().getById("mail_starttlsEnable").getV());
-			long timeout = Long.parseLong(getConfigService().getById("mail_timeout").getV());
-			long connectionTimeout = Long.parseLong(getConfigService().getById("mail_connectionTimeout").getV());
+			String host = configService.getById("mail_host").getV();
+			Integer port = Integer.valueOf(configService.getById("mail_port").getV());
+			String from = configService.getById("mail_from").getV();
+			String userAccount = configService.getById("mail_user").getV();
+			String pass = configService.getById("mail_pass").getV();
+			boolean sslEnable = Boolean.parseBoolean(configService.getById("mail_sslEnable").getV());
+			boolean starttlsEnable = Boolean.parseBoolean(configService.getById("mail_starttlsEnable").getV());
+			long timeout = Long.parseLong(configService.getById("mail_timeout").getV());
+			long connectionTimeout = Long.parseLong(configService.getById("mail_connectionTimeout").getV());
 			String email = user.getEmail();
 
 			// 配置信息
@@ -515,13 +509,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 		}
 
 		// 先删除域名记录（DNS和数据库）再删除用户
-		DomainRecord domainRecord = getDomainRecordService()
+		DomainRecord domainRecord = domainRecordService
 				.getOne(Wrappers.<DomainRecord>lambdaQuery().eq(DomainRecord::getUserId, userId));
 		if (domainRecord == null) {
 			removeById(userId);
 		} else {
 			Long domainRecordId = domainRecord.getId();
-			getDomainRecordService().delete(domainRecordId);
+			domainRecordService.delete(domainRecordId);
 			removeById(userId);
 		}
 
@@ -556,7 +550,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 	// 签到
 	@Override
 	public SaResult signIn() {
-		List<Config> configList = getConfigService().list();
+		List<Config> configList = configService.list();
 		int signPoint = 0;
 		for (Config con : configList) {
 			if (con.getK().equals("sign_point")) {
@@ -581,7 +575,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 			pointRecord.setRemark("签到奖励" + signPoint +"积分");
 			pointRecord.setCreatedTime(LocalDateTime.now());
 			updateById(user);
-			getPointRecordService().add(pointRecord);
+			pointRecordService.add(pointRecord);
 		} else {
 			return SaResult.error("已经签到过了，请明天再来");
 		}

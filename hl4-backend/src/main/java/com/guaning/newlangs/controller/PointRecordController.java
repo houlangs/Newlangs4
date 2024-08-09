@@ -14,12 +14,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/point_record")
 public class PointRecordController {
-	private PointRecordService pointRecordService;
-	
+
 	@Autowired
-	public void setPointRecordService(PointRecordService pointRecordService) {
-		this.pointRecordService = pointRecordService;
-	}
+	private PointRecordService pointRecordService;
+
 	
 	//积分记录列表
 	@GetMapping("/list")

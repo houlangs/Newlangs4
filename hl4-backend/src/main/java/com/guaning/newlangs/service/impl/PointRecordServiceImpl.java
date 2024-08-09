@@ -13,6 +13,7 @@ import com.guaning.newlangs.service.ConfigService;
 import com.guaning.newlangs.service.PointRecordService;
 import com.guaning.newlangs.service.UserService;
 import com.guaning.newlangs.util.GenSerial;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -27,20 +28,15 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Service
 public class PointRecordServiceImpl extends ServiceImpl<PointRecordMapper, PointRecord> implements PointRecordService {
-	final ConfigurableListableBeanFactory beanFactory;
-	private final UserService userService;
-	
+
 	@Autowired
+	private ConfigService configService;
+
+	@Autowired
+	private UserService userService;
+	
+	@Resource
 	private RedisTemplate<String, Integer> redisTemplate;
-	
-	public PointRecordServiceImpl(ConfigurableListableBeanFactory beanFactory, UserService userService) {
-		this.beanFactory = beanFactory;
-		this.userService = userService;
-	}
-	
-	public ConfigService getConfigService() {
-		return beanFactory.getBean(ConfigService.class);
-	}
 	
 	//积分记录列表
 	@Override
@@ -131,7 +127,7 @@ public class PointRecordServiceImpl extends ServiceImpl<PointRecordMapper, Point
 		Long userId = StpUtil.getLoginIdAsLong();
 		int commonPoint = 0;
 		
-		List<Config> configList = getConfigService().list();
+		List<Config> configList = configService.list();
 		for (Config con : configList) {
 			if (con.getK().equals("common_point")) {
 				commonPoint = Integer.parseInt(con.getV());

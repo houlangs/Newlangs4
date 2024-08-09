@@ -20,12 +20,9 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-	private UserService userService;
-	
+
 	@Autowired
-	public void setUserService(UserService userService) {
-		this.userService = userService;
-	}
+	private UserService userService;
 	
 	//邮件验证码
 	@GetMapping("/email_code")
