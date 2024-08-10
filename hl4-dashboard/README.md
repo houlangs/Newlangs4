@@ -42,13 +42,22 @@ npm run dev
 #### ⚠️修改后端地址
 在src/axios/axios.js中将baseURL替换为你的后端地址
 #### 修改logo/页面内容
-logo地址：public/favicon.ico 直接替换文字即可
-脚页/菜单等部件：src/layout
-首页：src/views/Dashboard.vue
-其它页面：src/views
+
+| 内容 | 位置 |
+|----------|----------------|
+| 网站logo | public/favicon.ico |
+| 首页 | src/views/Dashboard.vue |
+| 页脚/菜单等部件 | src/layout |
+| 其它页面 | src/views |
 *万能大法：通过VScode全局搜索功能，想改什么搜什么。*
 
+
+
+
+
+
 然后，您可以构建您的项目
+
 
 
 #### 要构建生产项目，请使用：
