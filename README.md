@@ -26,7 +26,7 @@
 - ⚙️ 后端自动构建：[Action](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml)。
 - 📽️ 视频教程：[Bilibili](https://www.bilibili.com/video/BV15e41197WL/)。
 - 😆 作者：[开发组成员](https://github.com/iguaning?tab=repositories)
-- 🥳 维护者：[开发组成员](https://github.com/iguaning?tab=repositories)
+- 🥳 作者与维护者：[开发组成员](https://hlyun.org/article/houlangs/team.html)
 
 ## 感谢赞助
 ### [🌦️雨云](https://www.rainyun.ink) 提供高速稳定的云服务器
