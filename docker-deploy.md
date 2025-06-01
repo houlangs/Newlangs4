@@ -15,8 +15,8 @@
 ## 📦 2. 获取项目代码
 
 ```bash
-git clone https://github.com/你的仓库/Newlangs4-main.git
-cd Newlangs4-main
+git clone [https://github.com/github.com/houlangs/Newlangs4](https://github.com/houlangs/Newlangs4.git)
+cd Newlangs4
 ```
 
 ---
