@@ -1,15 +1,27 @@
-# 构建阶段
-FROM node:16 AS build
+# Build stage
+FROM node:20-alpine as build
+
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
+
+# Copy package files
 COPY . .
+RUN rm -rf node_modules
+# Install dependencies
+RUN npm install
+
+# Build the application
 RUN npm run build
 
-# 生产阶段
-FROM nginx:alpine
+# Production stage
+FROM node:20-alpine
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy built files from build stage
 COPY --from=build /app/dist /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d/
+
+# Expose port 80
 EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
