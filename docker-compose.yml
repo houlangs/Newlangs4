@@ -6,10 +6,9 @@ services:
     container_name: hl4_mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: langs
-      MYSQL_USER: langs
+      MYSQL_DATABASE: houlangs
       MYSQL_PASSWORD: bUCpcxYW56J76tV6fGDw
+      MYSQL_ROOT_PASSWORD: bUCpcxYW56J76tV6fGDw
     volumes:
       - mysql_data:/var/lib/mysql
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
@@ -43,6 +42,10 @@ services:
       dockerfile: Dockerfile
     container_name: hl4_backend
     restart: always
+    environment:
+      SMS_USERNAME: 短信宝账号
+      SMS_API_KEY: 短信宝APIkey
+      CERTIFICATION_APP_CODE: APPcode
     depends_on:
       mysql:
         condition: service_healthy

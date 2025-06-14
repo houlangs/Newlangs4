@@ -13,7 +13,7 @@ RUN npm install
 RUN npm run build
 
 # Production stage
-FROM node:20-alpine
+FROM nginx:latest
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf

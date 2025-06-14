@@ -13,9 +13,9 @@ spring:
     name: newlangs
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://mysql:3306/langs?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://mysql:3306/houlangs?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
-      password: 123456
+      password: bUCpcxYW56J76tV6fGDw
   data:
     redis:
       database: 0
@@ -40,3 +40,12 @@ sa-token:
     is-share: false
     token-style: tik
     is-log: false
+
+# SMS configuration
+sms:
+  username: ${SMS_USERNAME:短信宝账号}
+  api-key: ${SMS_API_KEY:短信宝APIkey}
+
+# Certification API configuration
+certification:
+  app-code: ${CERTIFICATION_APP_CODE:APPcode}

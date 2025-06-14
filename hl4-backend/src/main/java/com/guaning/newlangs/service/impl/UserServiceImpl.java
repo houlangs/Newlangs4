@@ -17,6 +17,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.guaning.newlangs.apis.Certification;
 import com.guaning.newlangs.apis.SMSAPI;
+import com.guaning.newlangs.config.SmsConfig;
+import com.guaning.newlangs.config.CertificationConfig;
 import com.guaning.newlangs.dto.LoginDto;
 import com.guaning.newlangs.dto.RegisterDto;
 import com.guaning.newlangs.dto.UserUpdateDto;
@@ -50,7 +52,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 	@Autowired
 	private RedisTemplate<String, String> redisTemplate;
-	
+
 	@Autowired
 	private ConfigService configService;
 
@@ -59,7 +61,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 	@Autowired
 	private PointRecordService pointRecordService;
-	
+
+	@Autowired
+	private SmsConfig smsConfig;
+
+	@Autowired
+	private CertificationConfig certificationConfig;
+
 	private String generateSixDigitCode() {
         // 生成一个随机的 6 位数字验证码
         Random random = new Random();
@@ -137,8 +145,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 		} catch (Exception e) {
 			return SaResult.error("redis缓存失败");
 		}
-		String username = "短信宝账号";
-		String APIKEY = "短信宝APIkey";
+		String username = smsConfig.getUsername();
+		String APIKEY = smsConfig.getApiKey();
 		String content = "【二级域名】您的验证码为：" + code;
 		log.info("code = {}", code);
 
@@ -210,7 +218,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 		}
 
 		String url = "https://eid.shumaidata.com/eid/check";
-		String appCode = "APPcode";
+		String appCode = certificationConfig.getAppCode();
 		Map<String, String> params = new HashMap<>();
 		params.put("idcard", idNumber);
 		params.put("name", name);
@@ -548,7 +556,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 		return SaResult.ok("成功退出登录");
 	}
-	
+
 	// 签到
 	@Override
 	public SaResult signIn() {
