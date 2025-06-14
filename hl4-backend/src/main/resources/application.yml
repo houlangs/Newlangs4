@@ -40,3 +40,10 @@ sa-token:
     is-share: false
     token-style: tik
     is-log: false
+
+sms:
+  username: 短信宝账号
+  api-key: 短信宝APIkey
+
+certification:
+  app-code: APPcode
