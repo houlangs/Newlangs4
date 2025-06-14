@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosIns = axios.create({
-baseURL: '你的API地址',
+baseURL: '/api',
 	timeout: 2000
 })
 
@@ -9,7 +9,7 @@ baseURL: '你的API地址',
 axiosIns.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
 	let accessToken = localStorage.getItem('accessToken')
-	
+
 	config.headers = {
 		'Content-Type':'application/json;charset=UTF-8',
 		'accessToken': accessToken

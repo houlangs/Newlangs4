@@ -1,11 +1,6 @@
 FROM maven:3.8-openjdk-17 AS build
 WORKDIR /app
-COPY pom.xml .
-# 下载依赖
-RUN mvn dependency:go-offline
-
-# 复制源代码并构建
-COPY src ./src
+COPY . .
 RUN mvn package -DskipTests
 
 # 运行阶段
