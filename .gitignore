@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+.env
+.env.*
+
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+
+# IDE
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+
+# Others
+*.local 
