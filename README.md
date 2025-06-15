@@ -23,7 +23,7 @@
 
 ## 🔧安装指导
 - 💾 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://hlyun.org/article/houlangs/hl4-install)
-- 🐳 【推荐】非常简单的Docker部署方式详见[教程](/docker-deploy.md)
+- 🐳 【推荐】非常简单的Docker部署方式详见[教程](/deploy.md)
 - ⚙️ 后端自动构建：[Action](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml)
 - 📽️ 视频教程：[Bilibili](https://www.bilibili.com/video/BV15e41197WL/)
 
