@@ -40,12 +40,3 @@ sa-token:
     is-share: false
     token-style: tik
     is-log: false
-
-# SMS configuration
-sms:
-  username: ${SMS_USERNAME:短信宝账号}
-  api-key: ${SMS_API_KEY:短信宝APIkey}
-
-# Certification API configuration
-certification:
-  app-code: ${CERTIFICATION_APP_CODE:APPcode}

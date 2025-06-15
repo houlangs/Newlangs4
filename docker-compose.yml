@@ -42,10 +42,6 @@ services:
       dockerfile: Dockerfile
     container_name: hl4_backend
     restart: always
-    environment:
-      SMS_USERNAME: 短信宝账号
-      SMS_API_KEY: 短信宝APIkey
-      CERTIFICATION_APP_CODE: APPcode
     depends_on:
       mysql:
         condition: service_healthy

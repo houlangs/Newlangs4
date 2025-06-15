@@ -23,6 +23,9 @@ const noPrefixIn = ref('')
 const signPointIn = ref('')
 const commonCodeIn = ref('')
 const commonPointIn = ref('')
+const smsbaoUsernameIn = ref('')
+const smsbaoApikeyIn = ref('')
+const certificationAppcodeIn = ref('')
 
 const toast = useToast()
 
@@ -81,6 +84,15 @@ const list = () => {
 						break
 					case 'common_code':
 						commonCodeIn.value = config.value[i].v
+						break
+					case 'smsbao_username':
+						smsbaoUsernameIn.value = config.value[i].v
+						break
+					case 'smsbao_apikey':
+						smsbaoApikeyIn.value = config.value[i].v
+						break
+					case 'certification_appcode':
+						certificationAppcodeIn.value = config.value[i].v
 						break
 				}
 			}
@@ -155,6 +167,15 @@ const confirmUpdate = () => {
 				break
 			case 'common_code':
 				entityList[i].v = commonCodeIn.value
+				break
+			case 'smsbao_username':
+				entityList[i].v = smsbaoUsernameIn.value
+				break
+			case 'smsbao_apikey':
+				entityList[i].v = smsbaoApikeyIn.value
+				break
+			case 'certification_appcode':
+				entityList[i].v = certificationAppcodeIn.value
 				break
 		}
 	}
@@ -264,6 +285,24 @@ const confirmUpdate = () => {
             <label for="commonPoint" class="col-12 mb-2 md:col-2 md:mb-0">通用兑换码兑换积分</label>
             <div class="col-12 md:col-10">
                 <InputNumber id="commonPoint" v-model.trim="commonPointIn" />
+            </div>
+        </div>
+		<div class="field grid">
+            <label for="smsbaoUsername" class="col-12 mb-2 md:col-2 md:mb-0">短信宝账号</label>
+            <div class="col-12 md:col-10">
+                <InputText id="smsbaoUsername" type="text" v-model.trim="smsbaoUsernameIn" />
+            </div>
+        </div>
+		<div class="field grid">
+            <label for="smsbaoApikey" class="col-12 mb-2 md:col-2 md:mb-0">短信宝APIKEY</label>
+            <div class="col-12 md:col-10">
+                <InputText id="smsbaoApikey" type="text" v-model.trim="smsbaoApikeyIn" />
+            </div>
+        </div>
+		<div class="field grid">
+            <label for="certificationAppcode" class="col-12 mb-2 md:col-2 md:mb-0">实名认证appCode</label>
+            <div class="col-12 md:col-10">
+                <InputText id="certificationAppcode" type="text" v-model.trim="certificationAppcodeIn" />
             </div>
         </div>
 		<div class="flex align-items-center justify-content-end">

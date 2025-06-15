@@ -23,7 +23,10 @@ INSERT INTO `config` VALUES
 ('mail_user',NULL),
 ('no_prefix','app'),
 ('scan_keyWords','厚浪'),
-('sign_point','1');
+('sign_point','1'),
+('smsbao_apikey',NULL),
+('smsbao_username',NULL),
+('certification_appcode',NULL);
 
 -- 域名表
 CREATE TABLE IF NOT EXISTS `domain` (
