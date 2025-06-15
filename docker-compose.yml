@@ -10,7 +10,7 @@ services:
       MYSQL_PASSWORD: bUCpcxYW56J76tV6fGDw
       MYSQL_ROOT_PASSWORD: bUCpcxYW56J76tV6fGDw
     volumes:
-      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
       - ./docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     networks:
@@ -26,7 +26,7 @@ services:
     container_name: hl4_redis
     restart: always
     volumes:
-      - redis_data:/data
+      - ./docker/redis/data:/data
       - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf.template
     networks:
       - hl4_network
@@ -74,8 +74,8 @@ networks:
   hl4_network:
     driver: bridge
 
-volumes:
-  mysql_data:
-    name: hl4_mysql_data
-  redis_data:
-    name: hl4_redis_data
+#volumes:
+#  mysql_data:
+#    name: hl4_mysql_data
+#  redis_data:
+#    name: hl4_redis_data
