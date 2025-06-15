@@ -62,12 +62,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 	@Autowired
 	private PointRecordService pointRecordService;
 
-	@Autowired
-	private SmsConfig smsConfig;
-
-	@Autowired
-	private CertificationConfig certificationConfig;
-
 	private String generateSixDigitCode() {
         // 生成一个随机的 6 位数字验证码
         Random random = new Random();
@@ -145,8 +139,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 		} catch (Exception e) {
 			return SaResult.error("redis缓存失败");
 		}
-		String username = smsConfig.getUsername();
-		String APIKEY = smsConfig.getApiKey();
+		String username = configService.getById("smsbao_username").getV();
+		String APIKEY = configService.getById("smsbao_apikey").getV();
 		String content = "【二级域名】您的验证码为：" + code;
 		log.info("code = {}", code);
 
@@ -217,14 +211,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 			return SaResult.error("请先完成手机认证");
 		}
 
-		String url = "https://eid.shumaidata.com/eid/check";
-		String appCode = certificationConfig.getAppCode();
+
 		Map<String, String> params = new HashMap<>();
 		params.put("idcard", idNumber);
 		params.put("name", name);
-		String all = Certification.postForm(appCode, url, params);
+		String all = Certification.postForm(configService.getById("certification_appcode").getV(), "https://eid.shumaidata.com/eid/check", params);
+		if (all == null || all.isEmpty()) {
+			return SaResult.error("实名认证服务调用失败，请稍后重试");
+		}
+
 		JSONObject object = JSON.parseObject(all);
+		if (object == null) {
+			return SaResult.error("实名认证服务返回数据格式错误，请稍后重试");
+		}
+
 		JSONObject result = JSON.parseObject(object.getString("result"));
+		if (result == null) {
+			return SaResult.error("实名认证服务返回数据格式错误，请稍后重试");
+		}
 		if (object.getString("code").equals("0")) {
 			if (result.getString("res").equals("1")) {
 				// 实名成功升级为认证用户
