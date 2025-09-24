@@ -17,7 +17,7 @@
         <h5 class="text-600">
           🎉二级域名解析永久免费，欢迎使用~
           <br>
-          🌟收藏首页 <a href="https://langs.ink" target="_blank">langs.ink</a> 不迷路！
+          🌟收藏首页 <a href="https://houlang.cloud" target="_blank">houlang.cloud</a> 不迷路！
         </h5>
         <br />
         <span class="block text-600 font-medium mb-3">🏆常用功能</span>

@@ -22,13 +22,12 @@
 
 
 ## 🔧安装指导
-- 💾 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://hlyun.org/article/houlangs/hl4-install)
+- 💾 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://houlang.cloud/zh-CN/article/products/hl4-install)
 - 🐳 【推荐】非常简单的Docker部署方式详见[教程](/deploy.md)
 - ⚙️ 后端自动构建：[Action](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml)
 - 📽️ 视频教程：[Bilibili](https://www.bilibili.com/video/BV15e41197WL/)
 
 ## 致谢
-- 😆 作者：[开发组成员](https://github.com/iguaning?tab=repositories)
-- 🥳 作者与维护者：[开发组成员](https://hlyun.org/article/houlangs/team.html)
+- 🥳 作者与维护：[开发组成员](https://houlang.cloud/zh-CN/article/about/team)
 
-### [🌦️雨云](https://www.rainyun.ink) 提供高速稳定的云服务器
+### [🌦️雨云](https://rainyun.ink) 提供高速稳定的云服务器

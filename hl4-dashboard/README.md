@@ -5,7 +5,7 @@
 
 ## ❗️ 重要链接
 
-- 📄 [Docs](https://hlyun.org/article/houlangs/hl4-install)
+- 📄 [Docs](https://houlang.cloud/zh-CN/article/products/hl4-install)
 - 🚨 [Issues](https://github.com/houlangs/Newlangs4/issues)
 - 💬 [QQ](https://github.com/houlangs/Newlangs4/issues)
 
