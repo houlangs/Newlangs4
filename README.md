@@ -1,7 +1,7 @@
----
-**厚浪域名 6.0 已发布。推荐新部署用户使用该系统**
-开源地址：[git.houlang.cloud/houlangcloud/hl6](https://git.houlang.cloud/houlangcloud/hl6)
----
+
+# 厚浪域名 6.0 已发布。推荐新部署用户使用该系统
+# 开源地址：[git.houlang.cloud/houlangcloud/hl6](https://git.houlang.cloud/houlangcloud/hl6)
+
 
 # HLYUN4系统
 [![Backend Build CI](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml/badge.svg?branch=main)](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml)
