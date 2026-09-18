@@ -1,8 +1,9 @@
 
-# 厚浪域名 6.0 已发布。推荐新部署用户使用该系统
-# 开源地址：[git.houlang.cloud/houlangcloud/hl6](https://git.houlang.cloud/houlangcloud/hl6)
+#  Newlangs（HL4.0）已停止维护，新用户请部署 HL6
+# 前往HL6开源地址[git.houlang.cloud/houlangcloud/hl6](https://git.houlang.cloud/houlangcloud/hl6)
+HL6 支持 Docker 一键部署、自动审查、更丰富的权限管理和全新前端界面。欢迎使用！
 
-
+<details><summary>展开 Newlangs 介绍</summary>
 # HLYUN4系统
 [![Backend Build CI](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml/badge.svg?branch=main)](https://github.com/houlangs/Newlangs4/actions/workflows/maven-publish.yml)
 
@@ -16,16 +17,6 @@
 - 🪟 **先进**：厚浪云4系统接入了实名认证接口也短信验证码接口。能有效避免滥用并在用户违规时能够及时追责
 - 🔧 **经过实践检验**：伟大领袖曾说：实践是检验真理的唯一标准。厚浪云4系统在厚浪云官网生产环境运行，稳定性有保障
 
-<details><summary>以及</summary>
-
-
-
-- 🟥 **立场正确性**：厚浪开发组全体成员坚定不移坚持党的领导，永远听党话、跟党走。将个人利益让位于国家利益，将青春年华奉献于社会主义建设。我们坚决维护党对一切事业的绝对领导！
-
-
-</details>
-
-
 ## 🔧安装指导
 - 💾 如果您想设置自己的厚浪4程序，请参阅[安装文档](https://houlang.cloud/zh-CN/article/products/hl4-install)
 - 🐳 【推荐】非常简单的Docker部署方式详见[教程](/deploy.md)
@@ -36,3 +27,5 @@
 - 🥳 作者与维护：[开发组成员](https://houlang.cloud/zh-CN/article/about/team)
 
 ### [🌦️雨云](https://rainyun.ink) 提供高速稳定的云服务器
+
+</details>
